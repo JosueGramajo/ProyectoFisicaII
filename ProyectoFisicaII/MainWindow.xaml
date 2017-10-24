@@ -1,0 +1,113 @@
+﻿<Window x:Class="ProyectoFisicaII.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFisicaII"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1210" ResizeMode="NoResize">
+    <Grid Background="#FF66CC33">
+        <Label x:Name="label" Content="Cargas Electricas" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Foreground="White"/>
+
+        <Grid HorizontalAlignment="Left" Height="684" Margin="10,60,0,0" VerticalAlignment="Top" Width="850" Background="#FFA2E980">
+            <Image x:Name="q2_img" HorizontalAlignment="Left" Height="50" Margin="757,614,0,0" VerticalAlignment="Top" Width="50" Source="Content/assets/images/positiveChargeIcon.png" RenderTransformOrigin="0.74,-0.3"/>
+            <Image x:Name="q1_img" HorizontalAlignment="Left" Height="50" Margin="13,21,0,0" VerticalAlignment="Top" Width="50" Source="Content/assets/images/positiveChargeIcon.png"/>
+            <Image x:Name="q_prueba_img" HorizontalAlignment="Left" Height="50" Margin="23,614,0,0" VerticalAlignment="Top" Width="50" Source="Content/assets/images/positiveIcon.png"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="-225,345,0,0" Stroke="Black" VerticalAlignment="Top" Width="526" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.207"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="-25,339,-14,0" Stroke="Black" VerticalAlignment="Top" Width="889" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-141.297"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="78,644,0,0" Stroke="Black" VerticalAlignment="Top" Width="682" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-179.323"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Label x:Name="q1_lbl" Content="Carga 1" HorizontalAlignment="Left" Margin="68,21,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="q2_lbl" Content="Carga 2" HorizontalAlignment="Left" Margin="713,552,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.598,0.519">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="38.61"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="qprueba_lbl" Content="Carga de Prueba" HorizontalAlignment="Left" Margin="68,586,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="1.441"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="distancia_qp_q2" Content="Distancia" HorizontalAlignment="Left" Margin="321,605,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name="distancia_q1_qp" Content="Distancia" HorizontalAlignment="Left" Margin="63,318,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.574"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="684" Margin="874,60,0,0" VerticalAlignment="Top" Width="310" Background="#FFA2E980">
+            <Label x:Name="label1" Content="Carga 1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+            <Label x:Name="l" Content="Signo" HorizontalAlignment="Left" Margin="33,45,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="q1_carga" HorizontalAlignment="Left" Margin="180,49,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="q1_carga_DropDownClosed"  SelectedIndex="0">
+                <ComboBoxItem Content="Positivo"/>
+                <ComboBoxItem Content="Negativo"/>
+            </ComboBox>
+            <Label x:Name="label2" Content="Valor" HorizontalAlignment="Left" Margin="35,76,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="q1_valor" HorizontalAlignment="Left" Height="23" Margin="180,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="q1_valor_TextChanged"/>
+            <Label x:Name="label3" Content="Carga 2" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+            <Label x:Name="l_Copy" Content="Signo" HorizontalAlignment="Left" Margin="35,158,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="q2_carga" HorizontalAlignment="Left" Margin="182,162,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="q2_carga_DropDownClosed" SelectedIndex="0">
+                <ComboBoxItem Content="Positivo"/>
+                <ComboBoxItem Content="Negativo"/>
+            </ComboBox>
+            <Label x:Name="label2_Copy" Content="Valor" HorizontalAlignment="Left" Margin="37,189,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="q2_valor" HorizontalAlignment="Left" Height="23" Margin="182,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="q2_valor_TextChanged"/>
+            <Label x:Name="label5" Content="Distancias" HorizontalAlignment="Left" Margin="19,231,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+            <Label x:Name="label6" Content="Signo" HorizontalAlignment="Left" Margin="31,266,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="unidadDistancia" HorizontalAlignment="Left" Margin="178,270,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" DropDownClosed="unidadDistancia_DropDownClosed">
+                <ComboBoxItem Content="Metros"/>
+                <ComboBoxItem Content="Kilometros"/>
+            </ComboBox>
+            <Label x:Name="label7" Content="Carga 1 a Carga Prueba" HorizontalAlignment="Left" Margin="33,297,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="distanciaQ1QP" HorizontalAlignment="Left" Height="23" Margin="178,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="distanciaQ1Q2_TextChanged" Text=""/>
+            <Label x:Name="label7_Copy" Content="Carga Prueba a Carga 2" HorizontalAlignment="Left" Margin="31,339,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="distanciaQPQ2" HorizontalAlignment="Left" Height="23" Margin="178,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="distanciaQ2QPrueba_TextChanged" Text=""/>
+            <Button x:Name="btnCalcular" Content="Calcular" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="182,416,0,0" Height="24" Background="#FF0099FF" Foreground="White" BorderBrush="Transparent" Click="btnCalcular_Click"/>
+            <Button x:Name="btnValidar" Content="Validar Valores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="107" Margin="37,416,0,0" Height="24" Background="#FFFF005D" Foreground="White" BorderBrush="Transparent" Click="btnValidar_Click"/>
+            <Button x:Name="btnReingresar" Content="Reingresar Valores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="182,462,0,0" Height="24" Background="#FFFF005D" Foreground="White" BorderBrush="Transparent" Click="btnReingresar_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>
