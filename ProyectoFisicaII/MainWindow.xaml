@@ -78,35 +78,43 @@
 
         </Grid>
         <Grid HorizontalAlignment="Left" Height="684" Margin="874,60,0,0" VerticalAlignment="Top" Width="310" Background="#FFA2E980">
-            <Label x:Name="label1" Content="Carga 1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
-            <Label x:Name="l" Content="Signo" HorizontalAlignment="Left" Margin="33,45,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="q1_carga" HorizontalAlignment="Left" Margin="180,49,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="q1_carga_DropDownClosed"  SelectedIndex="0">
+            <Label x:Name="label1" Content="Carga 1" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+            <Label x:Name="l" Content="Signo" HorizontalAlignment="Left" Margin="33,81,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="q1_carga" HorizontalAlignment="Left" Margin="180,85,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="q1_carga_DropDownClosed"  SelectedIndex="0">
                 <ComboBoxItem Content="Positivo"/>
                 <ComboBoxItem Content="Negativo"/>
             </ComboBox>
-            <Label x:Name="label2" Content="Valor" HorizontalAlignment="Left" Margin="35,76,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="q1_valor" HorizontalAlignment="Left" Height="23" Margin="180,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="q1_valor_TextChanged"/>
-            <Label x:Name="label3" Content="Carga 2" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
-            <Label x:Name="l_Copy" Content="Signo" HorizontalAlignment="Left" Margin="35,158,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="q2_carga" HorizontalAlignment="Left" Margin="182,162,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="q2_carga_DropDownClosed" SelectedIndex="0">
+            <Label x:Name="label2" Content="Valor" HorizontalAlignment="Left" Margin="35,112,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="q1_valor" HorizontalAlignment="Left" Height="23" Margin="180,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="q1_valor_TextChanged"/>
+            <Label x:Name="label3" Content="Carga 2" HorizontalAlignment="Left" Margin="12,148,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+            <Label x:Name="l_Copy" Content="Signo" HorizontalAlignment="Left" Margin="37,183,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="q2_carga" HorizontalAlignment="Left" Margin="184,187,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="q2_carga_DropDownClosed" SelectedIndex="0">
                 <ComboBoxItem Content="Positivo"/>
                 <ComboBoxItem Content="Negativo"/>
             </ComboBox>
-            <Label x:Name="label2_Copy" Content="Valor" HorizontalAlignment="Left" Margin="37,189,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="q2_valor" HorizontalAlignment="Left" Height="23" Margin="182,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="q2_valor_TextChanged"/>
-            <Label x:Name="label5" Content="Distancias" HorizontalAlignment="Left" Margin="19,231,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
-            <Label x:Name="label6" Content="Signo" HorizontalAlignment="Left" Margin="31,266,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="unidadDistancia" HorizontalAlignment="Left" Margin="178,270,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" DropDownClosed="unidadDistancia_DropDownClosed">
+            <Label x:Name="label2_Copy" Content="Valor" HorizontalAlignment="Left" Margin="39,214,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="q2_valor" HorizontalAlignment="Left" Height="23" Margin="184,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="q2_valor_TextChanged"/>
+            <Label x:Name="label5" Content="Distancias" HorizontalAlignment="Left" Margin="21,256,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+            <Label x:Name="label6" Content="Dimensional" HorizontalAlignment="Left" Margin="33,291,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="unidadDistancia" HorizontalAlignment="Left" Margin="180,295,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" DropDownClosed="unidadDistancia_DropDownClosed">
                 <ComboBoxItem Content="Metros"/>
-                <ComboBoxItem Content="Kilometros"/>
+                <ComboBoxItem Content="Centimetros"/>
+                <ComboBoxItem Content="Pulgadas"/>
             </ComboBox>
-            <Label x:Name="label7" Content="Carga 1 a Carga Prueba" HorizontalAlignment="Left" Margin="33,297,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="distanciaQ1QP" HorizontalAlignment="Left" Height="23" Margin="178,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="distanciaQ1Q2_TextChanged" Text=""/>
-            <Label x:Name="label7_Copy" Content="Carga Prueba a Carga 2" HorizontalAlignment="Left" Margin="31,339,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="distanciaQPQ2" HorizontalAlignment="Left" Height="23" Margin="178,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="distanciaQ2QPrueba_TextChanged" Text=""/>
-            <Button x:Name="btnCalcular" Content="Calcular" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="182,416,0,0" Height="24" Background="#FF0099FF" Foreground="White" BorderBrush="Transparent" Click="btnCalcular_Click"/>
-            <Button x:Name="btnValidar" Content="Validar Valores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="107" Margin="37,416,0,0" Height="24" Background="#FFFF005D" Foreground="White" BorderBrush="Transparent" Click="btnValidar_Click"/>
-            <Button x:Name="btnReingresar" Content="Reingresar Valores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="182,462,0,0" Height="24" Background="#FFFF005D" Foreground="White" BorderBrush="Transparent" Click="btnReingresar_Click"/>
+            <Label x:Name="label7" Content="Carga 1 a Carga Prueba" HorizontalAlignment="Left" Margin="35,322,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="distanciaQ1QP" HorizontalAlignment="Left" Height="23" Margin="180,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="distanciaQ1Q2_TextChanged" Text=""/>
+            <Label x:Name="label7_Copy" Content="Carga Prueba a Carga 2" HorizontalAlignment="Left" Margin="33,364,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="distanciaQPQ2" HorizontalAlignment="Left" Height="23" Margin="180,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="distanciaQ2QPrueba_TextChanged" Text=""/>
+            <Button x:Name="btnCalcular" Content="Calcular" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="184,441,0,0" Height="24" Background="#FF0099FF" Foreground="White" BorderBrush="Transparent" Click="btnCalcular_Click"/>
+            <Button x:Name="btnValidar" Content="Validar Valores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="107" Margin="39,441,0,0" Height="24" Background="#FFFF005D" Foreground="White" BorderBrush="Transparent" Click="btnValidar_Click"/>
+            <Button x:Name="btnReingresar" Content="Reingresar Valores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="184,487,0,0" Height="24" Background="#FFFF005D" Foreground="White" BorderBrush="Transparent" Click="btnReingresar_Click"/>
+            <ComboBox x:Name="cb_Dimensionales" HorizontalAlignment="Left" Margin="180,18,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="q1_carga_DropDownClosed"  SelectedIndex="0" SelectionChanged="cb_Dimensionales_SelectionChanged">
+                <ComboBoxItem Content="C"/>
+                <ComboBoxItem Content="mC"/>
+                <ComboBoxItem Content="µC"/>
+                <ComboBoxItem Content="nC"/>
+            </ComboBox>
+            <Label x:Name="label1_Copy" Content="Dimensionales" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
 
         </Grid>
     </Grid>

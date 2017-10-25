@@ -21,6 +21,7 @@ namespace ProyectoFisicaII
     public partial class MainWindow : Window
     {
         String distancia = " mt(s)";
+        String dimensional = "C";
 
         public MainWindow()
         {
@@ -60,20 +61,62 @@ namespace ProyectoFisicaII
 
         }
 
+        private float notationResult(float value) {
+            float result = value;
+            switch(dimensional){
+                case "C":
+                    result = value;
+                    break;
+                case "mC":
+                    result = value * ((float)Math.Pow(10,-3));
+                    break;
+                case "µC":
+                    result = value * ((float)Math.Pow(10, -6));
+                    break;
+                case "nC":
+                    result = value * ((float)Math.Pow(10, -9));
+                    break;
+                default: break;
+            }
+
+            return result;
+        }
+
+        private float distanceResult(float value) {
+            float result = value;
+            switch(distancia){
+                case "m":
+                    result = value;
+                    break;
+                case "cm":
+                    result = (value / 100);
+                    break;
+                case "in":
+                    result = (float)(value * 0.0254);
+                    break;
+                default: break;
+            }
+            return result;
+        }
+
         private void btnCalcular_Click(object sender, RoutedEventArgs e)
         {
             float k = 9000000000;
             float q1 = float.Parse(q1_valor.Text.ToString());
-            float distance1SquarePow = (float)Math.Pow(double.Parse(distanciaQ1QP.Text.ToString()), 2);
+            q1 = notationResult(q1);
+            float distance1SquarePow = distanceResult(float.Parse(distanciaQ1QP.Text.ToString()));//(float)Math.Pow(double.Parse(distanciaQ1QP.Text.ToString()), 2);
+            distance1SquarePow = (float)Math.Pow(distance1SquarePow, 2);
             float e1 = (k * q1) / distance1SquarePow;
 
             float q2 = float.Parse(q2_valor.Text.ToString());
-            float distance2SquarePow = (float)Math.Pow(double.Parse(distanciaQPQ2.Text.ToString()), 2);
+            q2 = notationResult(q2);
+            float distance2SquarePow = distanceResult(float.Parse(distanciaQPQ2.Text.ToString()));
+            distance2SquarePow = (float)Math.Pow(distance2SquarePow, 2);
             float e2 = (k * q2) / distance2SquarePow;
 
             float res = (float)Math.Sqrt((((float)Math.Pow(e1, 2)) + ((float)Math.Pow(e2, 2))));
 
-            MessageBox.Show("result: "+res.ToString().Replace("E+"," x10^") + " N/c");
+           // MessageBox.Show("result: "+res.ToString().Replace("E+"," x10^") + " N/c");
 
             ComboBoxItem selected1 = (ComboBoxItem)q1_carga.SelectedValue;
             String signoQ1 = selected1.Content.ToString();
@@ -87,10 +130,41 @@ namespace ProyectoFisicaII
 
             float angulo = (float)Math.Atan((e1 / e2));
 
-            MessageBox.Show("Angulo: " + RadianToDegree(angulo) + "°");
+           // MessageBox.Show("Angulo: " + RadianToDegree(angulo) + "°");
+
+            String field = res.ToString().Replace("E+", " x10^") + " N/c";
+            String degrees = RadianToDegree(angulo) + "°";
+
+            ResultWindow rs = new ResultWindow(field,degrees,graphicType());
+            rs.Show();
         }
 
         double RadianToDegree(double angle) { return angle * (180.0 / Math.PI); }
+
+        private int graphicType() {
+            ComboBoxItem selected1 = (ComboBoxItem)q1_carga.SelectedValue;
+            String signoQ1 = selected1.Content.ToString();
+
+            ComboBoxItem selected2 = (ComboBoxItem)q2_carga.SelectedValue;
+            String signoQ2 = selected2.Content.ToString();
+
+            if(signoQ1 == "Positivo" && signoQ2 == "Positivo"){
+                return 1;
+            }
+            else if (signoQ1 == "Negativo" && signoQ2 == "Positivo")
+            {
+                return 2;
+            }
+            else if (signoQ1 == "Positivo" && signoQ2 == "Negativo")
+            {
+                return 3;
+            }
+            else if (signoQ1 == "Negativo" && signoQ2 == "Negativo")
+            {
+                return 4;
+            }
+            return 0;
+        }
 
         private void distanciaQ2QPrueba_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -118,11 +192,13 @@ namespace ProyectoFisicaII
 
             if (selected.Content.Equals("Metros"))
             {
-                distancia = " mt(s)";
+                distancia = "m";
             }
-            else
+            else if(selected.Content.Equals("Centimetros"))
             {
-                distancia = " km(s)";
+                distancia = "cm";
+            }else if(selected.Content.Equals("Pulgadas")){
+                distancia = "in";
             }
 
         }
@@ -234,10 +310,10 @@ namespace ProyectoFisicaII
         }
 
         private void placeValues() {
-            q1_lbl.Content = "Carga 1 = " + q1_valor.Text.ToString() + "c";
+            q1_lbl.Content = "Carga 1 = " + q1_valor.Text.ToString() + dimensional;
             q1_valor.IsEnabled = false;
 
-            q2_lbl.Content = "Carga 2 = " + q2_valor.Text.ToString() + "c";
+            q2_lbl.Content = "Carga 2 = " + q2_valor.Text.ToString() + dimensional;
             q2_valor.IsEnabled = false;
 
             distancia_q1_qp.Content = distanciaQ1QP.Text.ToString() + distancia;
@@ -249,6 +325,11 @@ namespace ProyectoFisicaII
             btnCalcular.Visibility = Visibility.Visible;
             btnReingresar.Visibility = Visibility.Visible;
             btnValidar.Visibility = Visibility.Hidden;
+
+            cb_Dimensionales.IsEnabled = false;
+            unidadDistancia.IsEnabled = false;
+            q1_carga.IsEnabled = false;
+            q2_carga.IsEnabled = false;
         }
 
         private bool validateNumericFields() {
@@ -314,6 +395,17 @@ namespace ProyectoFisicaII
             btnCalcular.Visibility = Visibility.Hidden;
             btnReingresar.Visibility = Visibility.Hidden;
             btnValidar.Visibility = Visibility.Visible;
+
+            cb_Dimensionales.IsEnabled = true;
+            unidadDistancia.IsEnabled = true;
+            q1_carga.IsEnabled = true;
+            q2_carga.IsEnabled = true;
+        }
+
+        private void cb_Dimensionales_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem selected = (ComboBoxItem)cb_Dimensionales.SelectedValue;
+            dimensional = selected.Content.ToString();
         }
 
     }
