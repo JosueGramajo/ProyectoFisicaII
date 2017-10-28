@@ -384,11 +384,11 @@ namespace ProyectoFisicaII
             q2_valor.Text = "";
             q2_valor.IsEnabled = true;
 
-            distancia_q1_qp.Content = "Distancia";
+            distancia_q1_qp.Content = "Distancia \nCarga 1 a Carga Prueba";
             distanciaQ1QP.Text = "";
             distanciaQ1QP.IsEnabled = true;
 
-            distancia_qp_q2.Content ="Distancia";
+            distancia_qp_q2.Content ="Distancia \nCarga Prueba a Carga 2";
             distanciaQPQ2.Text = "";
             distanciaQPQ2.IsEnabled = true;
 
@@ -406,6 +406,15 @@ namespace ProyectoFisicaII
         {
             ComboBoxItem selected = (ComboBoxItem)cb_Dimensionales.SelectedValue;
             dimensional = selected.Content.ToString();
+        }
+
+        private void autoresClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Muchas gracias por usar nuestro programa :D \n\n Autores: "
+                + "\n Bryam Leonel Paniagua Rodas / 0900-16-03585"
+                + "\n Miguel Angel Canté Espinoza / 0900-16-4710"
+                + "\n Manuel de Jesús Vega Gómez  / 0900-15-2718"
+                + "\n Josue Alejandro Gramajo Cujantes / 0900-16-3067");
         }
 
     }

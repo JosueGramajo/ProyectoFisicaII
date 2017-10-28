@@ -8,6 +8,7 @@
         Title="MainWindow" Height="900" Width="1210" ResizeMode="NoResize">
     <Grid Background="#FF66CC33">
         <Label x:Name="label" Content="Cargas Electricas" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="btnAutores" Content="AUTORES" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="1068,10,0,0" Height="24" Background="#FF0099FF" Foreground="White" BorderBrush="Transparent" Click="autoresClick"/>
 
         <Grid HorizontalAlignment="Left" Height="684" Margin="10,60,0,0" VerticalAlignment="Top" Width="850" Background="#FFA2E980">
             <Image x:Name="q2_img" HorizontalAlignment="Left" Height="50" Margin="757,614,0,0" VerticalAlignment="Top" Width="50" Source="Content/assets/images/positiveChargeIcon.png" RenderTransformOrigin="0.74,-0.3"/>
@@ -64,14 +65,14 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <Label x:Name="distancia_qp_q2" Content="Distancia" HorizontalAlignment="Left" Margin="321,605,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-            <Label x:Name="distancia_q1_qp" Content="Distancia" HorizontalAlignment="Left" Margin="63,318,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+            <Label x:Name="distancia_qp_q2" Content="Distancia&#xD;&#xA;Carga Prueba a Carga 2" HorizontalAlignment="Left" Margin="333,596,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name="distancia_q1_qp" Content="Distancia&#xD;&#xA;Carga 1 a Carga Prueba&#xD;&#xA;" HorizontalAlignment="Left" Margin="29,290,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.406,0.767" FontWeight="Bold" Height="50">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="89.574"/>
-                        <TranslateTransform/>
+                        <RotateTransform Angle="360.7"/>
+                        <TranslateTransform X="18.85" Y="86.049"/>
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
